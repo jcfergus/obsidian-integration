@@ -36,7 +36,9 @@ export function mapFrontmatterToConfluencePerPageUIValues(
 
 			if (frontmatterValue !== undefined) {
 				result[propertyKey as keyof ConfluencePerPageUIValues] = {
+					// @ts-ignore
 					value: frontmatterValue,
+					// @ts-ignore
 					isSet: true,
 				};
 			} else {
@@ -44,11 +46,13 @@ export function mapFrontmatterToConfluencePerPageUIValues(
 					case "options":
 					case "array-text":
 						result[propertyKey as keyof ConfluencePerPageUIValues] =
+							// @ts-ignore
 							{ value: defaultValue as never, isSet: false };
 						break;
 					case "boolean":
 					case "text":
 						result[propertyKey as keyof ConfluencePerPageUIValues] =
+							// @ts-ignore
 							{ value: undefined, isSet: false };
 						break;
 					default:
